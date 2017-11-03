@@ -41,13 +41,20 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-
+		</dependency>
+		<!-- 不严格的thymeleaf要添加Neko -->
+		<dependency>
+			<groupId>net.sourceforge.nekohtml</groupId>
+			<artifactId>nekohtml</artifactId>
+			<version>1.9.22</version>
 		</dependency>
 		<!-- 热部署工具 -->
-		<!--<dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
-		</dependency>-->
+			<optional>true</optional>
+			<scope>true</scope>
+		</dependency>
 		<!-- web -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -72,6 +79,12 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<!-- 如果没配置，devtools不起作用 -->
+					<fork>true</fork>
+
+				</configuration>
+
 				<!--<dependencies>
 					<dependency>
 						<groupId>org.springframework.boot</groupId>

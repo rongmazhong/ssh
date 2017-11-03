@@ -30,6 +30,6 @@ public interface UserRepository extends CrudRepository<User , Long> {
     @Query("select t from User t where t.name = :name")
     List<User> findUsersByUserName(@Param("name") String username);
 
-
     User findOne(Integer integer);*/
+    User findUsersByNameAndAge();
 }
