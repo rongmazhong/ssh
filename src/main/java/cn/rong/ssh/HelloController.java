@@ -20,8 +20,10 @@ public class HelloController {
 	@RequestMapping(value = "/he",method = RequestMethod.GET)
 	public ModelAndView hell(){
 		ModelAndView modelAndView = new ModelAndView("index");
+		modelAndView.addObject("hello","ron");
 		modelAndView.addObject("message","rong");
 		modelAndView.addObject("time",new Date());
+
 		return modelAndView;
 	}
 }

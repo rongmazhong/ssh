@@ -1,0 +1,25 @@
+#logo{
+    width: 300px;
+    margin: 10px;
+    height: 60px;
+    float: left;
+}
+#content{
+    clear: both;
+}
+.tips-wrapper{
+    background: #fff8f0;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.login-form{
+    float: right;
+    top:10px;
+    margin-top: 0px;
+    position: relative;
+    height: 475px;
+    margin: 10px 0 20px ;
+}
+

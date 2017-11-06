@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -29,9 +30,15 @@ public class IndexController {
     public java.lang.String hello(){
         return "hello";
     }
+
+    @ResponseBody
     @RequestMapping("/user")
     public List<User> getAll(){
         return userService.getAll();
+    }
+    @RequestMapping("/login")
+    public String login(){
+        return "login";
     }
     /*@RequestMapping(value = "/user/{userid}",method = RequestMethod.GET)
     public User findusersByName(int userid){

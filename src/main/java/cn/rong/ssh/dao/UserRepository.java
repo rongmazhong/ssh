@@ -1,6 +1,7 @@
 package cn.rong.ssh.dao;
 
 import cn.rong.ssh.domain.User;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,7 +16,7 @@ import java.util.List;
  */
 @Repository
 @Table(name = "uer")
-//@Qualifier("userRepository")
+@Qualifier("userRepository")
 public interface UserRepository extends CrudRepository<User , Long> {
 
 
@@ -31,5 +32,5 @@ public interface UserRepository extends CrudRepository<User , Long> {
     List<User> findUsersByUserName(@Param("name") String username);
 
     User findOne(Integer integer);*/
-    User findUsersByNameAndAge();
+    //User findUsersByNameAndAge();
 }
