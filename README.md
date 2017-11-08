@@ -13,7 +13,9 @@ spring boot 搞个手脚架
 
 
  * 使用Google的kaptcha
- 访问http://localhost:8080/defaultKaptcha可看见生成的随机验证码
+ 
+ 访问http://localhost:8080/defaultKaptcha 可看见生成的随机验证码
+ 
  访问http://localhost:8080/imgvrifyController可以进行后台验证
  
  
