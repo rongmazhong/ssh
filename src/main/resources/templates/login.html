@@ -10,9 +10,9 @@
 </head>
 <body>
 <div id="logo">
-    <a href="//www.rongmazhong.cn/">
+    <!--<a href="//www.rongmazhong.cn/">
         <img th:src="img/github.png" alt="rongmazhong" width="170px" height="60px">
-    </a>
+    </a>-->
     <b></b>
 </div>
 <div id="content">
@@ -29,19 +29,23 @@
                 </div>
             </div>
             <div class="form">
-                <form id="formlogin" method="post" onsubmit="false">
-                    <input type="hidden" id="sa_token" name="sa_token" value="" />
-                    <input type="hidden" id="uuid" name="uuid" value=""/>
+                <form id="formlogin" action="/loginCon" method="post" onsubmit="false">
+                    <input type="hidden" id="sa_token" name="sa_token" th:text="${info}" />
+                    <input type="hidden" id="uuid" name="uuid" value=""  />
                     <div class="item item-forel">
-                        <input id="loginname" type="text" class="itxt" name="loginname" tabindex="1" autocomplete="off" placeholder="邮箱/用户名/手机号"/>
+                        用户名：<input id="loginname" type="text" class="itxt" name="loginname" tabindex="1" autocomplete="off" placeholder="邮箱/用户名/手机号"/>
+                        <br />
+                        <br />
                         <span class="clear-btn" style="display: inline" ></span>
-                        <input type="password" id="loginpwd" name="loginpwd" class="itxt itxt-error" tabindex="2" autocomplete="off" placeholder="密码">
+                        密&nbsp;&nbsp;&nbsp;码：<input type="password" id="loginpwd" name="loginpwd" class="itxt itxt-error" tabindex="2" autocomplete="off" placeholder="密码">
+                        <br />
                         <span class="clear-btn"></span>
-                        <div class="verificy" id="verificy">
-                        <input id="authcode" type="text" name="authcode" tabindex="3" />
-                            <a href="javascript:void(0)" onclick="$(verification).click();" th:value="看不清换一张"><img id="verification" class="verify-code" src=""></a>
-                        </div>
-                        <a type="button" name="submit" href=" ">登&nbsp;&nbsp;&nbsp;&nbsp;录</a>
+                        验证码：<input id="vrifyCode" type="text" name="vrifyCode" tabindex="3" />
+                        <img alt="验证码" id="verification" class="verify-code" src="/defaultKaptcha" onclick="this.src='/defaultKaptcha?d='+new Date()*1" />
+                        <br />
+                        <br />
+                        <input type="submit" value="登&nbsp;&nbsp;&nbsp;&nbsp;录" />
+
                     </div>
 
                 </form>

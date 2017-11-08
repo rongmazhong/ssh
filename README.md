@@ -11,3 +11,10 @@ spring boot 搞个手脚架
 各种原因吧，只能自己业余时间搞，上班比较忙，接触的都是oracle等数据库的知识，以及Linux运维，对开发的理解不够深，自己瞎搭建的搞。
 
 
+
+ * 使用Google的kaptcha
+ 访问http://localhost:8080/defaultKaptcha可看见生成的随机验证码
+ 访问http://localhost:8080/imgvrifyController可以进行后台验证
+ 
+ 
+ 
