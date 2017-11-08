@@ -8,9 +8,10 @@
 </head>
 <body>
     <!--/*@thymesVar id="hello" type="java.lang.Integer"*/-->
-    <p th:text="'你好:'+${user}"> hello 首页</p>
-    <p th:text="${message} ">时间</p>
-    <p th:text=" ${time}" ></p>
-    <p th:text="${aaa}" >不谢</p>
+    <p th:text="'你好:'+${user.name}"> hello </p>
+    <p th:text="'age:'+${user.age}">age</p>
+    <p th:text="'customerid:'+${user.customerid}" ></p>
+    <h2 >请您登录后访问</h2>
+    <a href="/login">登录</a>
 </body>
 </html>

@@ -22,3 +22,6 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+!/src/main/resources/static/img/
+src/main/resources/static/img/
+src/main/resources/static/js/

@@ -1,10 +1,11 @@
 package cn.rong.ssh.dao;
 
 import cn.rong.ssh.domain.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.hibernate5.HibernateTemplate;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 /**
@@ -14,17 +15,14 @@ import java.util.List;
  * Package: cn.rong.ssh.dao
  */
 @Repository
-public class UserDao {
+public interface UserDao extends JpaRepository<User,Long>{
 
-	@Autowired
-	private HibernateTemplate HIBERNATE_TEMPLATE;
-	/*@Autowired
-	private User user;*/
+	@Override
+	List<User> findAll();
 
-	public List<User> getUser(String name){
-		String sql = "select count(*) from User u where u.username=myname";
-		String paramName="myname";
-		List<User> users= (List<User>) HIBERNATE_TEMPLATE.findByNamedQueryAndNamedParam(sql,paramName,name);
-		return users;
-	}
+	@Transactional
+	@Query("select u from User u where u.name = ?1")
+	User findUserByName(String name);
+
+
 }

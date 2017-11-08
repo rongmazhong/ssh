@@ -5,8 +5,6 @@ import cn.rong.ssh.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 /**
  * Author:rong
  * Description:
@@ -17,8 +15,8 @@ import java.util.List;
 public class UserSer {
 	@Autowired
 	private UserDao userDao;
-	public List<User> getUser(String name){
-		List<User> users = userDao.getUser(name);
-		return users;
+	public User findUserByName(String name){
+		User user = userDao.findUserByName(name);
+		return user;
 	}
 }
